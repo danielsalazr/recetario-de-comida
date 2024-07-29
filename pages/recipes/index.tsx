@@ -1,5 +1,6 @@
 import React from 'react'
 import plato from '@/public/images/Carne-a-la-Criolla-Colombia.jpg';
+import whatsapp from '@/public/images/whatsapp-48.png';
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
@@ -43,6 +44,17 @@ export default function index({}: Props) {
                               <li>1 tomate chonto</li>
                               <li>100 gr de Sal</li>
                             </ul>
+
+                            <a href="https://wa.me/send?text=Hola%2C%20Esteban%20Esta%20es%20la%20Receta"><button className='text-white mt-6 ms-4 border py-2 px-4 rounded-lg text-xl' style={{"background": '#2FC613'}}>Enviar receta  <Image
+                                src={whatsapp}
+                                alt="Vercel Logo"
+                                className="inline rounded-tr-lg"
+
+                                width={32}
+                                height={32}
+                                priority
+                            />
+                            </button></a>
                           
                         </div>
                         <div className='border border-black rounded-tr-lg '>

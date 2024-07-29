@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from "@/components/Header";
 
-// Carne-a-la-Criolla-Colombia
+
 
 type Props = {}
 
