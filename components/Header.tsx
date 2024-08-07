@@ -10,18 +10,20 @@ export default function Header({}: Props) {
     <header className='Header'>
         <div className='Header__Container mx-auto max-w-container flex justify-between max-w-7xl px-4 py-6 sm:px-6 xl:px-8'>
             <div className='Header__logoAndToggle'>
-                <a href="/" className="flex gap-x-4 items-center">
-                    <Image
-                        src={sopa}
-                        alt="Vercel Logo"
-                        className="dark:invert"
-                        width={32}
-                        height={32}
-                        priority
-                    />
-                    <span className='text-2xl'>FoodColombia</span>
+                <Link href="/" legacyBehavior>
+                    <a href="" className="flex gap-x-4 items-center">
+                        <Image
+                            src={sopa}
+                            alt="Vercel Logo"
+                            className="dark:invert"
+                            width={32}
+                            height={32}
+                            priority
+                        />
+                        <span className='text-2xl'>FoodColombia</span>
 
-                </a>
+                    </a>
+                </Link>
             </div>
             <div className='Header__nav hidden md:flex'>
                 <nav className='flex items-center'>

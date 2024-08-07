@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
+import Carrousel from "@/components/Carrousel";
+import YaEstamosAqui from "@/containers/YaEstamosAqui";
+import Footer from "@/components/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +16,11 @@ export default function Home() {
     // >
     <>
         <Header />
-        <div>Este es el principal</div>
+        <Carrousel />
+        <YaEstamosAqui />
+        {/* <div>Este es el principal</div> */}
+
+        <Footer />
     </>
     
       
