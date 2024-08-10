@@ -32,3 +32,13 @@ body {
     text-wrap: balance;
   }
 } */
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+  }
+
+  .flex-container:nth-child(1) {
+    width: 33.33333%;
+  }
+}

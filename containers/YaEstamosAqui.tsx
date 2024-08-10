@@ -8,9 +8,9 @@ type Props = {}
 
 export default function YaEstamosAqui({}: Props) {
   return (
-    <section className="flex max-w-container py-0 md:py-8 ">
-        <div className='flex flex-wrap justify-center mx-auto max-w-7xl py-4 gap-x-4'>
-            <div className="flex h-96 justify-center  p-4" >
+    <section className="max-w-container py-0 md:py-8 ">
+        <div className='flex flex-row  flex-container justify-center mx-auto max-w-7xl py-4 gap-x-4'>
+            <div className="flex-1 justify-center  p-4" >
                 <Image
                     src={comida_bienvenida}
                     alt=''
@@ -21,7 +21,7 @@ export default function YaEstamosAqui({}: Props) {
                 />
             </div>
 
-            <div className="w-96 flex flex-col h-96  justify-center  p-4">
+            <div className="flex-1 p-4 basis-full md:basis-8/12">
                 {/* <h2>Ya estamos aqui</h2> */}
                 <p className="text-4xl font-normal leading-6">
                     
