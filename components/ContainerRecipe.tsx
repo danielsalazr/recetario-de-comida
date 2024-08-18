@@ -11,26 +11,40 @@ type Props = {}
 export default function ContainerRecipe({}: Props) {
   return (
     <>
-        <main className='flex flex-col items-center '>
+        <main className='flex flex-col items-center mt-3'>
             <form action=""> 
-                <input type="search" className='border-2 border-black rounded-lg px-4 py-1' />
+              <div className="flex justify-center mt-8">
+                <input
+                    type="text"
+                    //value={query}
+                    //onChange={handleInputChange}
+                    placeholder="Search..."
+                    className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                    //onClick={handleSearch}
+                    className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                > Search</button>
+              </div>
             </form>
             {/* <div> Resto de la app</div> */}
             
-            <div className=''
+            {/* <div className=''
               style={{
                 "background": 'linear-gradient(90deg, rgba(255,69,0,1) 10%, rgba(255,215,0,1) 49%, rgba(50,205,50,1) 65%, rgba(255,165,0,1) 86%)',
                 'height': '100px',
                 'width': '100%'
               
               }}
-            ></div>
+            ></div> */}
+
             {/* <div className=' '> */}
-                <div className='bg-gray-100 flex justify-center items-center w-full  px-4 py-6'>
+                <div className=' flex justify-center items-center w-full  px-4 py-6'>
                     <div className='grid md:grid-cols-2 grid-cols-1 px-4 w-full max-w-7xl'>
                         <div className='border border-black p-4 rounded-tl-lg'>
-                          <span>Ingredientes</span>
-                            <ul className='list-inside list-disc mt-3 ms-8'>
+                          <strong className="text-2xl">Ingredientes</strong>
+                          <hr className="mt-2 border-t-2  border-red-400" />
+                            <ul className='list-outside list-disc mt-3 ms-8 leading-7 text-lg'>
 
                               <li>2x Huevos</li>
                               <li>1Lb de arroz</li>
@@ -63,8 +77,9 @@ export default function ContainerRecipe({}: Props) {
                             />
                             </div>
                         <div className='border border-black col-span-1 md:col-span-2 rounded-b-lg p-4'>
-                            <span>Receta</span>
-                            <p>
+                            <strong className='text-2xl'>Receta</strong>
+                            <hr className="mt-2 border-t-2  border-red-400" />
+                            <p className='mt-3'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et lacinia ipsum. Proin quis magna ac risus vulputate rhoncus. Duis ac mi ac justo scelerisque malesuada. Aenean vulputate ante quam, auctor maximus purus pulvinar quis. Donec ex mi, fermentum et mauris non, viverra iaculis massa. Integer in sem hendrerit, tempus nunc sit amet, efficitur sapien. Quisque commodo sem magna, vel ultricies nisl tincidunt ac. Suspendisse lacinia id sapien vel consequat.
                             </p>
                         </div>
