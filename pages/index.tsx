@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Carrousel from "@/components/Carrousel";
 import YaEstamosAqui from "@/containers/YaEstamosAqui";
+import Recetas from "@/components/Recetas";
 import Footer from "@/components/Footer";
 
 
@@ -17,6 +18,7 @@ export default function Home() {
     <>
         <Header />
         <Carrousel />
+        <Recetas />
         <YaEstamosAqui />
         {/* <div>Este es el principal</div> */}
 
