@@ -9,13 +9,13 @@ type Props = {}
 export default function YaEstamosAqui({}: Props) {
   return (
     <section className="max-w-container py-0 md:py-8 ">
-        <div className='flex flex-row  flex-container justify-center mx-auto max-w-7xl py-4 gap-x-4'>
-            <div className="flex-1 justify-center  p-4" >
+        <div className='flex flex-row  justify-center mx-auto max-w-7xl py-4 gap-x-4'>
+            <div className="flex justify-center p-4" >
                 <Image
                     src={comida_bienvenida}
                     alt=''
-                    // width={400}
-                    // height={200}
+                    width={600}
+                    height={400}
                     // className='w-96 '
                     // style={{"width": '160%'}}
                 />

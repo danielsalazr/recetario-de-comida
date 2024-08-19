@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Carrousel from "@/components/Carrousel";
 import YaEstamosAqui from "@/containers/YaEstamosAqui";
 import Recetas from "@/components/Recetas";
+import CategoriaRecetas from "@/components/CategoriaRecetas";
 import Footer from "@/components/Footer";
 
 
@@ -18,6 +19,7 @@ export default function Home() {
     <>
         <Header />
         <Carrousel />
+        <CategoriaRecetas />
         <Recetas />
         <YaEstamosAqui />
         {/* <div>Este es el principal</div> */}
