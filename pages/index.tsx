@@ -17,10 +17,14 @@ export default function Home() {
     //   className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     // >
     <>
+   
         <Header />
+        
+
         <Carrousel />
         <CategoriaRecetas />
         <Recetas />
+       
         <YaEstamosAqui />
         {/* <div>Este es el principal</div> */}
 

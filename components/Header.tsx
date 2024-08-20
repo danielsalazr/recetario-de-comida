@@ -1,5 +1,5 @@
 import React from 'react';
-import sopa from '@/public/images/soup.png';
+import sopa from '@/public/images/ajiaco.png';
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -7,8 +7,8 @@ type Props = {}
 
 export default function Header({}: Props) {
   return (
-    <header className='Header'>
-        <div className='Header__Container mx-auto max-w-container flex justify-between max-w-7xl px-4 py-6 sm:px-6 xl:px-8'>
+    <header className='Header bg-amber-500 opacity-85 z-[-1] '>
+        <div className='Header__Container mx-auto max-w-container flex justify-between max-w-7xl px-4 py-4 sm:px-6 xl:px-8 z-1'>
             <div className='Header__logoAndToggle'>
                 <Link href="/" legacyBehavior>
                     <a href="" className="flex gap-x-4 items-center">
@@ -16,23 +16,23 @@ export default function Header({}: Props) {
                             src={sopa}
                             alt="Vercel Logo"
                             className="dark:invert"
-                            width={32}
-                            height={32}
+                            width={60}
+                            height={60}
                             priority
                         />
-                        <span className='text-2xl'>FoodColombia</span>
+                        <span className='text-2xl'><strong>Food</strong>Colombia</span>
 
                     </a>
                 </Link>
             </div>
             <div className='Header__nav hidden md:flex'>
                 <nav className='flex items-center'>
-                    <ul className='flex gap-x-6 items-center'>
+                    <ul className='flex gap-x-6 items-center '>
                     {/* <Link href="/about" legacyBehavior> <a >About</a> </Link> */}
-                        <Link href="/recipes" legacyBehavior><li className='text-xl'><a href="">Recetas</a></li></Link>
-                        <Link href="/recipes/ver-recetas" legacyBehavior><li className='text-xl'><a href="">Aportar</a></li></Link>
-                        <Link href="/about" legacyBehavior><li className='text-xl'><a href="">Comunidad</a></li></Link>
-                        <Link href="/about" legacyBehavior><li className='text-xl'><a href="">Login</a></li></Link>
+                        <Link href="/recipes" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Recetas</a></li></Link>
+                        <Link href="/recipes/ver-recetas" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Aportar</a></li></Link>
+                        <Link href="/about" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Comunidad</a></li></Link>
+                        <Link href="/about" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Login</a></li></Link>
                     </ul>
                 </nav>
             </div>
@@ -43,7 +43,9 @@ export default function Header({}: Props) {
                 </svg>
             </button>
         </div>
+        
         </div>
+       
         <hr />
     </header>
   )
