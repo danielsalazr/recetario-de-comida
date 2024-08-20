@@ -5,10 +5,11 @@ type Props = {}
 
 export default function Footer({}: Props) {
   return (
-    <footer className="pt-0 md:py-20 border-t">
+    <footer className="pt-0 md:py-20 border-t bg-amber-500 opacity-75">
         <div className="mx-auto flex justify-around max-w-7xl px-4 py-6 sm:px-6 xl:px-8">
           <div>
               <strong className="text-xl">FoodColombia</strong>
+              <p>¡Disfruta de lo mejor de la cocina colombiana!</p>
               <br />
               <br />
               Siguenos en redes sociales:

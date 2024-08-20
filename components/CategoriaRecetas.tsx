@@ -24,17 +24,17 @@ export default function CategoriaRecetas({}: Props) {
                 //value={query}
                 //onChange={handleInputChange}
                 placeholder="Search..."
-                className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-lime-500"
             />
             <button
                 //onClick={handleSearch}
-                className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 bg-lime-500 text-white rounded-r-md hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-lime-500"
             > Search</button>
             </div>
 
             <div className='flex flex-wrap justify-center w-full gap-8 mt-10'>
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105 " style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>
@@ -56,7 +56,7 @@ export default function CategoriaRecetas({}: Props) {
                 </div>
 
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105" style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>
@@ -78,7 +78,7 @@ export default function CategoriaRecetas({}: Props) {
                 </div>
 
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105" style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>
@@ -100,7 +100,7 @@ export default function CategoriaRecetas({}: Props) {
                 </div>
 
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105" style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>
@@ -122,7 +122,7 @@ export default function CategoriaRecetas({}: Props) {
                 </div>
 
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105" style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>
@@ -144,7 +144,7 @@ export default function CategoriaRecetas({}: Props) {
                 </div>
 
                 <div className="py-4 ">
-                    <Link href='/' className="text-center" style={{
+                    <Link href='/' className="flex flex-col items-center text-center transition-transform duration-300 transform-gpu hover:scale-105" style={{
                           "borderRadius": "50%",
                           // "aspectRatio": "1/1"
                         }}>

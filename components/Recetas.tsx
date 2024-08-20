@@ -23,18 +23,19 @@ function Recetas({}: Props) {
     <div className="max-w-container py-0 md:py-8">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl py-4 gap-x-4">
         <h2 className="text-3xl"><strong>Recetas recomendadas</strong></h2>
+        <p>Donde cada bocado es una explosión de sabor.</p>
         <div className="grid gap-6 mt-6 mb-6  grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
 
           {/* ///////////////////////////////// */}
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={arrospaisa}
                 alt="Almuerzo"
                 width={256}
                 height={256}
-                className=" object-cover"
+                className=" object-cover "
                 style={{"aspectRatio": "1/1",
                   
                 }}
@@ -54,7 +55,7 @@ function Recetas({}: Props) {
 
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={canelones}
                 alt="Almuerzo"
@@ -77,7 +78,7 @@ function Recetas({}: Props) {
           </div>
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={pastabolognesa}
                 alt="Almuerzo"
@@ -101,7 +102,7 @@ function Recetas({}: Props) {
 
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={huevospericos}
                 alt="Almuerzo"
@@ -124,7 +125,7 @@ function Recetas({}: Props) {
           </div>
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={calentado}
                 alt="Almuerzo"
@@ -147,7 +148,7 @@ function Recetas({}: Props) {
           </div>
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={sandwichdeatun}
                 alt="Almuerzo"
@@ -171,7 +172,7 @@ function Recetas({}: Props) {
 
 
           <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
-            <div className="relative">
+            <div className="relative transition-transform duration-300 transform-gpu hover:scale-105 ">
               <Image
                 src={micheladamangobiche}
                 alt="Almuerzo"
