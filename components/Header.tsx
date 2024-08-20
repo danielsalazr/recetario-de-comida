@@ -8,7 +8,7 @@ type Props = {}
 export default function Header({}: Props) {
   return (
     <header className='Header bg-amber-500 opacity-85 z-[-1] '>
-        <div className='Header__Container mx-auto max-w-container flex justify-between max-w-7xl px-4 py-4 sm:px-6 xl:px-8 z-1'>
+        <div className='Header__Container mx-auto max-w-container flex justify-between max-w-7xl px-4 py-4 sm:px-6 xl:px-8 z'>
             <div className='Header__logoAndToggle'>
                 <Link href="/" legacyBehavior>
                     <a href="" className="flex gap-x-4 items-center">
@@ -31,7 +31,7 @@ export default function Header({}: Props) {
                     {/* <Link href="/about" legacyBehavior> <a >About</a> </Link> */}
                         <Link href="/recipes" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Recetas</a></li></Link>
                         <Link href="/recipes/ver-recetas" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Aportar</a></li></Link>
-                        <Link href="/about" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Comunidad</a></li></Link>
+                        <Link href="/recipes/about" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Comunidad</a></li></Link>
                         <Link href="/about" legacyBehavior><li className='text-xl hover:text-white transition-colors'><a href="">Login</a></li></Link>
                     </ul>
                 </nav>
