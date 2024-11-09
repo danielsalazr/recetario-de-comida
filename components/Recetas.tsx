@@ -45,7 +45,7 @@ import aguapanela from '@/public/images/aguapanela.jpg';
 
 type Props = {}
 
-function Recetas({}: Props) {
+function Recetas({ }: Props) {
 
   const recetas = [
 
@@ -101,7 +101,7 @@ function Recetas({}: Props) {
     },
     {
       name: "Patacon con huevos pericos",
-      images: pataconesconperico  ,
+      images: pataconesconperico,
       author: "Daniel Salazar",
     },
     {
@@ -244,18 +244,19 @@ function Recetas({}: Props) {
     //   images: arrospaisa,
     //   author: "Daniel Salazar",
     // },
-    
+
   ]
   return (
     <div className="max-w-container py-0 md:py-8">
-        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl py-4 gap-x-4">
+      <div className="flex flex-col justify-center items-center mx-auto max-w-7xl py-4 gap-x-4">
         <h2 className="text-3xl"><strong>Recetas recomendadas</strong></h2>
+        <p>Donde cada bocado es una explosión de sabor.</p>
         <div className="grid gap-6 mt-6 mb-6  grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
 
-          {/* ///////////////////////////////// */}
 
           {recetas.map(receta => (
-              <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
+
+            <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
               <div className="relative">
                 <Image
                   src={receta.images}
@@ -263,31 +264,31 @@ function Recetas({}: Props) {
                   width={256}
                   height={256}
                   className=" object-cover"
-                  style={{"aspectRatio": "1/1",
-                    
+                  style={{
+                    "aspectRatio": "1/1",
                   }}
                 />
-                <div className="absolute w-full bottom-0 left-0   text-white p-2" 
-                style={{
-                  "background" : "linear-gradient(0deg, rgba(0,0,0,0.4682247899159664) 20%, rgba(255,255,255,0.06206232492997199) 100%)"
-                }}>
+
+                <div className="absolute w-full bottom-0 left-0   text-white p-2"
+                  style={{
+                    "background": "linear-gradient(0deg, rgba(0,0,0,0.4682247899159664) 20%, rgba(255,255,255,0.06206232492997199) 100%)"
+                  }}>
                   <p className="font-bold">{receta.name}</p>
                   <p className="text-base">{receta.author}</p>
                 </div>
               </div>
-              
             </div>
           ))}
 
-          
-
-          {/* ////////////////////////////////////// */}
 
 
-        </div>
-        </div>
-        <hr />
-    </div>
+
+
+
+        </div >
+      </div >
+      <hr />
+    </div >
   )
 }
 

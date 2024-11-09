@@ -44,10 +44,10 @@ export default function ContainerRecipe({ }: Props) {
               <a href="https://wa.me/send?text=Hola%2C%20Esteban%20Esta%20es%20la%20Receta"><button className='text-white mt-6 ms-4 border py-2 px-4 rounded-lg text-xl' style={{ "background": '#2FC613' }}>Enviar receta  <Image
                 src={whatsapp}
                 alt="Vercel Logo"
-                className="inline rounded-tr-lg"
+                className="inline rounded-tr-lg "
 
-                width={32}
-                height={32}
+                width={20}
+                height={20}
                 priority
               />
               </button></a>
@@ -63,10 +63,13 @@ export default function ContainerRecipe({ }: Props) {
                 priority
               />
             </div>
-            <div className='border border-black col-span-1 md:col-span-2 rounded-b-lg p-4'>
-              <strong className='text-2xl'>Receta</strong>
-              <hr className="mt-2 border-t-2  border-red-400" />
-              <p className='mt-3'>
+            <div className='border border-black col-span-1 md:col-span-2 rounded-b-lg p-6'>
+              <strong className='text-2xl p-3'>Receta</strong>
+              <hr className="mt-2 border-t-2  border-amber-500 mt-5" />
+              <p className='mt-3 px-10 py-6'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et lacinia ipsum. Proin quis magna ac risus vulputate rhoncus. Duis ac mi ac justo scelerisque malesuada. Aenean vulputate ante quam, auctor maximus purus pulvinar quis. Donec ex mi, fermentum et mauris non, viverra iaculis massa. Integer in sem hendrerit, tempus nunc sit amet, efficitur sapien. Quisque commodo sem magna, vel ultricies nisl tincidunt ac. Suspendisse lacinia id sapien vel consequat.
+              </p>
+              <p className='mt-3 px-10 '>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et lacinia ipsum. Proin quis magna ac risus vulputate rhoncus. Duis ac mi ac justo scelerisque malesuada. Aenean vulputate ante quam, auctor maximus purus pulvinar quis. Donec ex mi, fermentum et mauris non, viverra iaculis massa. Integer in sem hendrerit, tempus nunc sit amet, efficitur sapien. Quisque commodo sem magna, vel ultricies nisl tincidunt ac. Suspendisse lacinia id sapien vel consequat.
               </p>
             </div>
