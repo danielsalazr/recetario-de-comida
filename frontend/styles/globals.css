@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "flowbite";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+/* 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+  }
+
+  .flex-container:nth-child(1) {
+    width: 33.33333%;
+  }
+}
+
+/*Body*/
+html,
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.titulo {
+  @apply font-serif font-medium text-lg;
+}
+
+.loader-container {
+  @apply fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-black opacity-50 z-50;
+}
+
+.boton {
+  @apply bg-transparent;
+}
+
+.boton:hover {
+  @apply bg-black text-white;
+}
+
+.table-row-spacing > tr {
+  @apply mb-2;
+}
+
+.card {
+  @apply transition duration-500 ease-in-out;
+}
+
+.card:hover {
+  @apply scale-110;
+}
+
+.color:hover {
+  @apply bg-gray-600;
+}
+
+/* Media query */
+@media (min-width: 1024px) {
+  .lg\:w-11\/12 {
+    @apply w-11/12;
+  }
+}
+
+/*TABLAS*/
+.izquierdo {
+  @apply rounded-r-lg;
+}
+.derecho {
+  @apply rounded-l-lg;
+}
+.td-tabla {
+  @apply px-4 py-2 justify-center;
+}
+
+/*ESTILOS DE HEADER*/
+.sidebar-item {
+  @apply flex items-center justify-center border-b border-white text-lg transition duration-500 ease-in-out;
+}
+.sidebar-item:hover {
+  @apply scale-110;
+}
+
+/*LOGIN*/
+.contenedor-login {
+  @apply w-full h-screen flex justify-center items-center;
+}
+
+.formulario-login {
+  @apply fixed grid gap-4 p-20 h-screen mx-auto text-center;
+}
+
+.label-login {
+  @apply text-left text-white text-sm pt-4;
+}
+
+.input-login {
+  @apply rounded-md px-3 py-2 text-sm;
+}
+/*FONDO LOGIN*/
+.colorf {
+  /* background-image: url(../public/fondo.webp); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONTENDOR CARTAS MENU */
+.cartas-style {
+  @apply border border-black rounded-md text-center flex flex-col items-center justify-center;
+  @apply p-6 m-auto bg-white text-black w-4/5;
+  @apply transition duration-300 ease-in-out;
+}
+.cartas-style:hover {
+  @apply text-white bg-black transform scale-105;
+}
+.tamaño {
+  @apply text-5xl;
+}
+
+/*CONTENEDOR ENTRADA DE MERCANCIA*/
+.section_mercancia {
+  @apply grid grid-cols-1 gap-1;
+}
+.contenedor-campo {
+  @apply grid grid-cols-2;
+}
+.campo {
+  @apply border transition duration-200;
+}
+.campo:hover {
+  @apply border-black;
+}
+
+/*CONTENEDOR IMPRESION TICKETS*/
+.encabezados {
+  @apply px-2 py-1 text-sm leading-5;
+}
+.estilos-campos {
+  @apply w-full border px-1;
+}
+.botones {
+  @apply bg-black text-white transition duration-200 hover:bg-gray-100 hover:text-black;
+  @apply text-base leading-5 px-4 py-1.5 mx-1 my-1.5 h-8;
+}
+
+/*Sidebar*/
+.estilo-li {
+  @apply absolute bottom-full top-1/2 mt-2 text-sm transform -translate-y-1/2  text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+}
+.boton-sidebar {
+  @apply border-2 border-gray-300 h-16 px-2 my-5 transition-colors hover:bg-gray-200 hover:text-black;
+}
+.contenedor-sidebar {
+  @apply fixed h-full bg-black text-white p-1 rounded-r-lg w-40 transition-transform duration-300;
+}
+
+/*MODAL*/
+
+.modal-overlay {
+  @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+}
+.modal-container {
+  @apply fixed inset-0 flex items-center justify-center p-4 w-full transition-shadow;
+}
+.modal-box {
+  @apply bg-white rounded-lg shadow-lg w-full h-5/6 mx-auto;
+}
+.modal-header {
+  @apply flex justify-between items-center p-4 border-b border-gray-200;
+}
+.modal-body {
+  @apply p-4;
+}
+.modal-footer {
+  @apply flex justify-end p-4 border-t border-gray-200;
+}
+.modal-close-btn {
+  @apply text-gray-400 hover:text-gray-600 focus:outline-none;
+}
+.estilos {
+  @apply text-black transition-colors hover:text-gray-400;
+}
