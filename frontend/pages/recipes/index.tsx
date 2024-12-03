@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 import plato from '@/public/images/Carne-a-la-Criolla-Colombia.jpg';
 import whatsapp from '@/public/images/whatsapp-48.png';
 import Image from "next/image";
@@ -6,6 +6,8 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import ContainerRecipe from '@/components/ContainerRecipe';
 import Modal from '@/containers/Modal';
+import {callApi} from '@/utils/api';
+
 // import { Container } from 'postcss';
 
 
@@ -16,13 +18,39 @@ type Props = {}
 export default function index({ }: Props) {
 
   const [openModal, setOpenModal] = useState(false);
+  const [recipe, setRecipe] = useState({}) 
+
 
   const closeModal = () => setOpenModal(false);
+
+
+  const obtenerDatos = async () => {
+    try {
+      const datos =  await callApi('http://127.0.0.1:8000/recetas/');
+      setRecipe(datos)
+      setOpenModal(!openModal)
+    } catch (error) {
+      console.error('Error:');
+    }
+  };
+
+  // const getRecipe = async () =>{
+  
+  //   const info = await obtenerDatos()
+  //   // console.log(info)
+    
+  //   // setOpenModal(!openModal)
+
+  // }
+
+  // useEffect(() => {
+  //   // getRecipe();
+  // }, []);
 
   return (
     <>
       <Header />
-      <button onClick={() => setOpenModal(!openModal)} >receta </button>
+      <button onClick={obtenerDatos} >receta </button>
 
 
       <form action="">
@@ -43,11 +71,12 @@ export default function index({ }: Props) {
 
 
 
-      <ContainerRecipe />
-
+      {/* <ContainerRecipe /> */}
+      
       {openModal && <Modal
         isOpen={openModal}
         closeModal={closeModal}
+        information={recipe}
       />}
 
     </>

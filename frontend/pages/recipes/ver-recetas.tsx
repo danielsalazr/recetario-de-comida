@@ -10,6 +10,7 @@ export default function verrecetas({}: Props) {
     <>
         <Header />
         <div>Aqui se ven las recetas</div>
+        
     </>
   )
 }

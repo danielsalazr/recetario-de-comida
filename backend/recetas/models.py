@@ -2,11 +2,13 @@ from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from datetime import datetime
 from django.utils import timezone
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255, verbose_name="Nombre en SAP")
+    image = models.ImageField(upload_to='categories')
 
     class Meta:
         verbose_name = "Category"
@@ -24,9 +26,9 @@ class Recipe(models.Model):
     ingredients = models.TextField(verbose_name="ingredientes", blank=True, null=True)
     description = models.TextField(verbose_name="description", blank=True, null=True)
     categories = models.ManyToManyField(Category, verbose_name="categorias", blank=True, null=True, related_name="categories")
+    author = models.ForeignKey(User, verbose_name="Autor", on_delete=DO_NOTHING, blank=True, null=True, related_name="autor")
 
     class Meta:
-        verbose_name = "Recipe"
         verbose_name_plural = "Recipes"
         managed = True
 
@@ -41,8 +43,8 @@ class CombinedRecipes(models.Model):
     recipe2 = models.ForeignKey(Recipe, on_delete=DO_NOTHING, verbose_name="receta 2", blank=True, null=True, related_name="recipe2")
 
     class Meta:
-        verbose_name = "Recipe"
-        verbose_name_plural = "Recipes"
+        verbose_name = "Receta Combinada"
+        verbose_name_plural = "Recetas Combinadas"
         managed = True
 
     

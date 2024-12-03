@@ -14,11 +14,27 @@ from .models import (
 
 # PARAMETRIZACIONES
 # admin.site.register(Dimension)
-admin.site.register(Category)
-admin.site.register(ImageRecipe)
+# admin.site.register(Category)
+# admin.site.register(ImageRecipe)
 admin.site.register(CombinedRecipes)
 
+@admin.register(ImageRecipe)
+class ImageRecipeAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'image',
+        'recipe',
+        # 'categories',
+    )
 
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'name',
+        'image',
+        # 'categories',
+    )
 
 @admin.register(Recipe)
 class ReciperAdmin(admin.ModelAdmin):

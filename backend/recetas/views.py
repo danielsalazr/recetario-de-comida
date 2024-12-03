@@ -10,7 +10,7 @@ from django.core import serializers
 from django.db import models, connections, transaction
 from django.forms.models import model_to_dict
 
-import django_excel as excel
+# import django_excel as excel
 
 # Views
 # from MySQL.views import (
@@ -82,19 +82,143 @@ from rest_framework.parsers import FileUploadParser
 # Validators
 # from picking.consume.validations import existInOrder, supMontoInOrder
 
+from .models import (
+    Recipe,
+    Category,
+    CombinedRecipes,
+    ImageRecipe,
+)
 
 # Python
 from datetime import datetime
 from time import gmtime, strftime
 import json
 import time
-import pytz
+# import pytz
 from rich.console import Console
 console = Console()
 
 # Utils
-from utils.datetimeConversionTimezone import colombiaTimezone
+# from utils.datetimeConversionTimezone import colombiaTimezone
 
+@api_view(('GET', 'POST',))
+def recipesFormInfo(request):
+
+    categories = Category.objects.all().values()
+
+    context = {
+        "categories":categories,
+    }
+
+    return Response(context)
+
+
+class Recipes(APIView):
+    """
+    View to list all users in the system.
+
+    * Requires token authentication.
+    * Only admin users are able to access this view.
+    """
+    # authentication_classes = [authentication.TokenAuthentication]
+    # permission_classes = [permissions.IsAdminUser]
+
+    def get(self, request, format=None):
+        """
+        Return a list of all users.
+        """
+
+        # usernames = [user.username for user in User.objects.all()]
+
+        if 'recipe' in request.query_params:
+
+            recipes = Recipe.objects.get(id=request.query_params['recipe'])
+            images = ImageRecipe.objects.filter(recipe=recipes).values()
+            recipe_dict = Recipe.objects.filter(id=request.query_params['recipe']).values().first()
+            categorias = recipes.categories.all().values()
+            relacionados = recipes.categories.all().values()
+
+            context = { 
+                "recipe": recipe_dict, 
+                "images": images, 
+                "categorias": categorias
+            }
+
+            return Response(context)
+
+            
+        recipes = Recipe.objects.all()
+        recipes_dict =  Recipe.objects.all().values() #get(id=2)
+        # images = ImageRecipe.objects.filter(recipe=recipes).values()
+        # recipe_dict = Recipe.objects.filter(id=1).values()
+        # categorias = recipes.categories.all().values()
+        # relacionados = recipes.categories.all().values()
+
+
+        context = []
+        for i, data in enumerate(recipes):
+            json = {}
+            json['recipe'] = recipes_dict[i]#model_to_dict(data)
+            json['images'] = ImageRecipe.objects.filter(recipe=data).values().first() #.values()
+            json['categorias'] = data.categories.all().values()
+            json['recipe']['author'] = f"{data.author.first_name} {data.author.last_name}"
+            context.append(json)
+
+
+
+
+        
+        console.log(context)
+
+        # queryValidateExistCopy = f"""
+        #     SELECT 
+        #         idDestino_id,
+        #         idOrigen_id,
+        #         T1.company_id as companyOrigen,
+        #         T2.company_id as companyDestino
+        #     FROM picking_duplicatedpicking T0
+        #     INNER JOIN picking_picking T1 ON T1.idPicking = T0.idOrigen_id 
+        #     INNER JOIN picking_picking T2 ON T2.idPicking = T0.idDestino_id
+        #     where (T0.idOrigen_id = {picking.idPicking} or T0.idDestino_id =  {picking.idPicking})  and T1.company_id = {request.data['originDatabaseSelected']} and T2.company_id = {request.data['destinationDatabaseSelected']};
+        # """
+            
+        # with connections['default'].cursor() as cursor:
+        #     cursor.execute(queryValidateExistCopy)
+        #     columns = [col[0] for col in cursor.description]
+        #     result = [dict(zip(columns, row)) for row in cursor.fetchall()]
+            # result = list(cursor.fetchall())
+
+        # queryset = QuerySet(model=passTable, using='default')
+        # queryset._result_cache = list(result)
+
+        # return Response({"info": "Reinfo"})
+        return Response(context)
+
+    def post(self, request, *args, **kwargs):
+        pass
+        
+        console.log(request.data)
+
+        imagenes = request.FILES.getlist('imagen')
+        console.log(imagenes)
+
+        receta = Recipe(
+            name = request.data.get('name'),
+            ingredients = request.data.get('ingredients'),
+            description = request.data.get('description'),
+            author = User.objects.get(id=1)
+            # categories = request.data.get('name
+        )
+        receta.save()
+
+        for i in request.data.getlist('categories'):
+            # console.log(i)
+            receta.categories.add(Category.objects.get(name=i))
+
+        for i in imagenes:
+            ImageRecipe.objects.create(image=i, recipe=receta)
+
+        return Response({"res" : "Si mi papa"})
 
 # class passTable(models.Model):
 #     pass

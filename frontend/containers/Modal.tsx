@@ -15,7 +15,11 @@ interface ModalProps {
 
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, closeModal }) => { //({ Contenedor, items, validacion, isOpen, closeModal }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, information}) => { //({ Contenedor, items, validacion, isOpen, closeModal }) => {
+    
+    console.log(information)
+
+
     return (
         <>
             {/* Overlay */}
@@ -25,13 +29,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal }) => { //({ Contenedo
             // onClick={closeModal}
             />
             <div className="modal-container">
-                <div className="modal-box">
+                <div className="modal-box overflow-y-scroll">
                     <div className="modal-header">
                         <Image
                             // src={sopa}
                             alt="Logo"
                             width={100}
-                            height={50}
+                            height={40}
 
                         />
                         <button
@@ -56,7 +60,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal }) => { //({ Contenedo
                     </div>
                     <div className="modal-body">
                         {/* <Contenedor items={items} validacion={validacion} /> */}
-                        <ContainerRecipe />
+                        <ContainerRecipe 
+                            information={information}
+                        />
                     </div>
 
                 </div>

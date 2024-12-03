@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from "next/image";
 import Link from 'next/link';
+import {callApi} from '@/utils/api';
+import { useRouter } from "next/router";
+import { GetServerSideProps } from 'next';
+import Modal from '@/containers/Modal';
+
+
 
 import almuerzos from '@/public/images/almuerzos.jpg';
 import desayunos from '@/public/images/desayunos.jpg';
@@ -43,9 +49,15 @@ import aguapanela from '@/public/images/aguapanela.jpg';
 
 
 
+  
+
+
 type Props = {}
 
-function Recetas({ }: Props) {
+function Recetas({ recetaas }: Props) {
+
+  // console.log(recetaas)
+  // console.log(notFound)
 
   const recetas = [
 
@@ -246,6 +258,27 @@ function Recetas({ }: Props) {
     // },
 
   ]
+
+
+  const [recipe, setRecipe] = useState('') 
+  const [openModal, setOpenModal] = useState(false);
+  const closeModal = () => setOpenModal(false);
+
+    async function getRecipe(id){
+    
+      const urll = `http://127.0.0.1:8000/recetas/?recipe=${id}`
+      const info = await callApi(urll);
+      setRecipe(info)
+      setOpenModal(!openModal)
+    }
+
+  
+  useEffect(() => {
+    //   // getRecipe();
+    console.log(recipe)
+    }, []);
+
+
   return (
     <div className="max-w-container py-0 md:py-8">
       <div className="flex flex-col justify-center items-center mx-auto max-w-7xl py-4 gap-x-4">
@@ -254,7 +287,7 @@ function Recetas({ }: Props) {
         <div className="grid gap-6 mt-6 mb-6  grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
 
 
-          {recetas.map(receta => (
+          {/* {recetas.map(receta => (
 
             <div className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
               <div className="relative">
@@ -278,7 +311,39 @@ function Recetas({ }: Props) {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
+
+{recetaas.map(receta => (
+
+<div onClick={() => getRecipe(receta.recipe.id)} className="max-w-sm rounded overflow-hidden shadow-lg rounded-4">
+  <div className="relative">
+    <Image
+      src={`http://127.0.0.1:8000/media/${receta.images.image}`}
+      alt="Almuerzo"
+      width={256}
+      height={256}
+      className=" object-cover"
+      style={{
+        "aspectRatio": "1/1",
+      }}
+    />
+
+    <div className="absolute w-full bottom-0 left-0   text-white p-2"
+      style={{
+        "background": "linear-gradient(0deg, rgba(0,0,0,0.4682247899159664) 20%, rgba(255,255,255,0.06206232492997199) 100%)"
+      }}>
+      <p className="font-bold">{receta.recipe. name}</p>
+      <p className="text-base">Daniel Salazar</p>
+    </div>
+  </div>
+</div>
+))}
+
+          {openModal && <Modal
+            isOpen={openModal}
+            closeModal={closeModal}
+            information={recipe}
+          />}
 
 
 

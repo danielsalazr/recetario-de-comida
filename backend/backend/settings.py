@@ -56,13 +56,14 @@ INSTALLED_APPS = [
     # 'inventory.apps.InventoryConfig',
     'rest_framework',
     'recetas',
-    'usuarios'
+    'usuarios',
+    'corsheaders',
     #'silk',
 ]
 
 MIDDLEWARE = [
     # 'silk.middleware.SilkyMiddleware',
-    #'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -141,6 +142,22 @@ DATABASES = {
 # }
 
 CACHE_TTL = 60 * 15
+
+CORS_ALLOWED_ORIGINS = [
+    'http://192.168.130.22:3000', 'http://127.0.0.1:3000', 'http://localhost:3000',
+    'http://127.0.0.1',
+    
+]
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000','http://192.168.130.22:3000'', http://127.0.0.1:3000',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Password validation

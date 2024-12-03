@@ -6,11 +6,30 @@ import YaEstamosAqui from "@/containers/YaEstamosAqui";
 import Recetas from "@/components/Recetas";
 import CategoriaRecetas from "@/components/CategoriaRecetas";
 import Footer from "@/components/Footer";
+import { callApi } from "@/utils/api";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export const getServerSideProps : GetServerSideProps<Props> = async () => {
+  // try {
+    const recetaas = await callApi(`http://127.0.0.1:8000/recetas/`);
+    // const datos = await respuesta.json();
+    console.log(recetaas)
+    return {
+      props: {
+        recetaas,
+        // id: params.id,
+      },
+    };
+  // } catch (error) {
+  //   console.error(error);
+  //   return {
+  //     notFound: true,
+  //   };
+  }
+
+export default function Home( {recetaas}) {
   return (
     // <main
       
@@ -23,7 +42,7 @@ export default function Home() {
 
         <Carrousel />
         <CategoriaRecetas />
-        <Recetas />
+        <Recetas recetaas={recetaas} />
        
         <YaEstamosAqui />
         {/* <div>Este es el principal</div> */}
