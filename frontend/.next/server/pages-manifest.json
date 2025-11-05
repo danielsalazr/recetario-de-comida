@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/recipes": "pages/recipes.js",
+  "/": "pages/index.js",
+  "/recipes/ver-recetas": "pages/recipes/ver-recetas.js",
+  "/recipes/about": "pages/recipes/about.js",
+  "/recipes/Create": "pages/recipes/Create.js"
+}
